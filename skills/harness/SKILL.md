@@ -94,6 +94,12 @@ v2는 현행 Claude Code의 세 가지 멀티에이전트 프리미티브에 대
 
 ### Phase 3: 에이전트 정의 생성
 
+#### 3-0. 기존 에이전트 중복 검토
+
+신규 에이전트 생성 전, `프로젝트/.claude/agents/`의 기존 에이전트와 중복 여부를 확인한다. 하네스를 반복 구축하다 보면 역할이 겹치는 에이전트가 다른 이름으로 누적되기 쉽다.
+
+> 중복 분류 기준과 재사용 설계는 `references/agent-design-patterns.md`의 "에이전트 재사용 설계" 참조.
+
 **모든 에이전트는 반드시 `프로젝트/.claude/agents/{name}.md` 파일로 정의한다.** 에이전트 정의 파일 없이 Agent 도구의 prompt에 역할을 직접 넣는 것은 금지한다. 이유:
 - 파일로 존재해야 다음 세션에서 재사용 가능하고, `subagent_type: "{name}"`(Agent 도구) 및 `agentType: "{name}"`(Workflow)으로 호출 가능
 - 통신 프로토콜이 명시되어야 에이전트 간 협업 품질 보장
@@ -131,6 +137,12 @@ v2는 현행 Claude Code의 세 가지 멀티에이전트 프리미티브에 대
 ### Phase 4: 스킬 생성
 
 각 에이전트가 사용할 스킬을 `프로젝트/.claude/skills/{name}/SKILL.md`에 생성한다. 상세 작성 가이드는 `references/skill-writing-guide.md` 참조.
+
+#### 4-0. 기존 스킬 중복 검토
+
+신규 스킬 생성 전, `프로젝트/.claude/skills/`의 기존 스킬과 중복 여부를 확인한다. 하네스를 반복 구축하다 보면 기능이 겹치는 스킬이 다른 이름으로 누적되기 쉽다.
+
+> 중복 분류 기준과 일반화 패턴은 `references/skill-writing-guide.md`의 "스킬 재사용 설계" 참조.
 
 #### 4-1. 스킬 구조
 
