@@ -6,7 +6,10 @@
   "plugins": [
     {
       "name": "harness",
-      "source": "./"
+      "source": {
+         "source": "github",
+         "repo": "godrm/harness"
+      }
     }
   ]
 }
