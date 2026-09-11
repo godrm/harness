@@ -1,9 +1,8 @@
 {
   "name": "harness-marketplace",
   "owner": {
-    "name": "revfactory",
-    "email": "revfactory@gmail.com",
-    "url": "https://github.com/revfactory"
+    "name": "godrm",
+    "url": "https://github.com/godrm"
   },
   "plugins": [
     {
